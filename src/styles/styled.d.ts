@@ -6,6 +6,10 @@ declare module 'styled-components' {
       bgColor: string;
       textColor: string;
       mainColor: string;
+      borderColor: string;
+    };
+    ui: {
+      iconBtnBgColor: string;
     };
   }
 }

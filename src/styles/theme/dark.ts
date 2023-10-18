@@ -5,6 +5,10 @@ const darkTheme: DefaultTheme = {
     bgColor: '#303030',
     textColor: '#f7f7f7',
     mainColor: '#ffffff',
+    borderColor: '#ffffff',
+  },
+  ui: {
+    iconBtnBgColor: '#404040',
   },
 };
 

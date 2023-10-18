@@ -5,7 +5,7 @@ import { getCookie } from 'cookies-next';
 
 import { COOKEY_KEY } from '@/libs/const';
 
-import Layout from '@/components/Layout';
+import Layout from '@/components/common/Layout';
 import ThemeProvider from '@/components/ThemeProvider';
 
 import GlobalStyles from '@/styles/globalStyles';
