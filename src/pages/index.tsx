@@ -1,6 +1,3 @@
-import { getAllPosts } from '@/libs/api';
-import { GetServerSideProps } from 'next';
-
 export default function Home() {
   return (
     <>
@@ -8,11 +5,3 @@ export default function Home() {
     </>
   );
 }
-
-export const getServerSideProps: GetServerSideProps = async () => {
-  const allPosts = getAllPosts(['title', 'date']);
-  console.log(allPosts);
-  return {
-    props: {},
-  };
-};
