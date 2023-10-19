@@ -17,7 +17,7 @@ const Projects = ({ posts: allPosts }: { posts: Post[] }) => {
       <Banner title="Projects" tags={tags} currentTag={currentTag} onTagChange={onTagChange} />
       <Page>
         {posts.map((post, i) => (
-          <Card key={`${post.title}_${i}`} href={`/projects/${post.title}`} post={post} />
+          <Card key={`${post.title}_${i}`} href={`/projects/${post.slug}`} post={post} />
         ))}
       </Page>
     </main>

@@ -6,7 +6,7 @@ const lightTheme: DefaultTheme = {
     textColor: '#303030',
     lightTextColor: '#a0a0a0',
     mainColor: '#FC4A1A',
-    borderColor: '#c0c0c0',
+    borderColor: '#d0d0d0',
   },
   ui: {
     iconBtnBgColor: '#e7e7e7',

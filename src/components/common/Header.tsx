@@ -8,6 +8,7 @@ import Logo from './Logo';
 import ThemeBtn from './ThemeBtn';
 import SearchBtn from './SearchBtn';
 import { useRouter } from 'next/router';
+import { HEADER_HEIGHT } from '@/libs/const';
 
 const Container = styled.header`
   position: sticky;
@@ -23,7 +24,7 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 60px;
+  height: ${`${HEADER_HEIGHT}px`};
   ${wrapStyle};
 `;
 
@@ -33,7 +34,7 @@ const RightLayout = styled.div`
   gap: 16px;
 `;
 
-const GNB = styled.ul`
+const GNB = styled.nav`
   display: flex;
   align-items: center;
   gap: 18px;
@@ -74,21 +75,15 @@ const Header = () => {
         </Link>
         <RightLayout>
           <GNB>
-            <li>
-              <SLink href="/about" $isCurrent={rootPath === 'about'}>
-                ABOUT
-              </SLink>
-            </li>
-            <li>
-              <SLink href="/posts" $isCurrent={rootPath === 'posts'}>
-                POSTS
-              </SLink>
-            </li>
-            <li>
-              <SLink href="/projects" $isCurrent={rootPath === 'projects'}>
-                PROJECTS
-              </SLink>
-            </li>
+            <SLink href="/about" $isCurrent={rootPath === 'about'}>
+              ABOUT
+            </SLink>
+            <SLink href="/posts" $isCurrent={rootPath === 'posts'}>
+              POSTS
+            </SLink>
+            <SLink href="/projects" $isCurrent={rootPath === 'projects'}>
+              PROJECTS
+            </SLink>
           </GNB>
           <Line />
           <BtnBox>
