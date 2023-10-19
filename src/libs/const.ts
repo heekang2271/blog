@@ -5,3 +5,5 @@ export const COOKEY_KEY = {
 export const DEVICE_WIDTH = {
   TABLET: 680,
 };
+
+export const POST_FILEDS = ['title', 'excerpt', 'date', 'fixed', 'category', 'coverImage', 'tags'];

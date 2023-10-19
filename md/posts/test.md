@@ -1,9 +1,11 @@
 ---
-title: 'Preview Mode for Static Generation'
-excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.'
-date: '2020-03-16T05:35:07.322Z'
-author:
-  name: Joe Haddad
+title: '한국 천문연구원 스마트랩'
+excerpt: '한국 천문연구원 스마트랩 개발'
+date: '2020-03-01'
+fixed: false
+category: 'project'
+coverImage: '/assets/projects/ex.png'
+tags: ['React', 'Typescript', 'PHP', 'MySQL']
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.

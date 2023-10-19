@@ -2,7 +2,7 @@ import { GetStaticProps } from 'next';
 
 import styled from 'styled-components';
 
-import { getMarkdownBySlug } from '@/libs/api';
+import { getPostBySlug } from '@/libs/api';
 import { markdownToHtml } from '@/libs/markdownToHtml';
 
 import PostBody from '@/components/post/PostBody';
@@ -25,7 +25,7 @@ const About = ({ content }: { content: string }) => {
 export default About;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const about = getMarkdownBySlug('about', 'about', ['content']);
+  const about = getPostBySlug('about', 'about', ['content']);
   const content = await markdownToHtml(about.content || '');
 
   return {

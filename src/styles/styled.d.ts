@@ -5,6 +5,7 @@ declare module 'styled-components' {
     global: {
       bgColor: string;
       textColor: string;
+      lightTextColor: string;
       mainColor: string;
       borderColor: string;
     };

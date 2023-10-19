@@ -7,10 +7,15 @@ import { wrapStyle } from '@/styles';
 import Logo from './Logo';
 import ThemeBtn from './ThemeBtn';
 import SearchBtn from './SearchBtn';
+import { useRouter } from 'next/router';
 
 const Container = styled.header`
   position: sticky;
   top: 0;
+  font-size: 15px;
+  background-color: ${(props) => `${props.theme.global.bgColor}CC`};
+  backdrop-filter: saturate(180%) blur(8px);
+  z-index: 9999;
 `;
 
 const Wrapper = styled.div`
@@ -39,6 +44,13 @@ const GNB = styled.ul`
   }
 `;
 
+const SLink = styled(Link)<{ $isCurrent?: boolean }>`
+  color: ${(props) => (props.$isCurrent ? props.theme.global.mainColor : props.theme.global.textColor)};
+  &:hover {
+    text-decoration: ${(props) => (props.$isCurrent ? 'none' : 'underline')};
+  }
+`;
+
 const Line = styled.div`
   border-right: 1px solid ${(props) => props.theme.global.borderColor};
   height: 20px;
@@ -51,6 +63,9 @@ const BtnBox = styled.ul`
 `;
 
 const Header = () => {
+  const router = useRouter();
+  const rootPath = router.pathname.split('/')[1];
+
   return (
     <Container>
       <Wrapper>
@@ -60,13 +75,19 @@ const Header = () => {
         <RightLayout>
           <GNB>
             <li>
-              <Link href="/about">ABOUT</Link>
+              <SLink href="/about" $isCurrent={rootPath === 'about'}>
+                ABOUT
+              </SLink>
             </li>
             <li>
-              <Link href="/posts">POSTS</Link>
+              <SLink href="/posts" $isCurrent={rootPath === 'posts'}>
+                POSTS
+              </SLink>
             </li>
             <li>
-              <Link href="/projects">PROJECTS</Link>
+              <SLink href="/projects" $isCurrent={rootPath === 'projects'}>
+                PROJECTS
+              </SLink>
             </li>
           </GNB>
           <Line />

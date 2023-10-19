@@ -4,6 +4,7 @@ const lightTheme: DefaultTheme = {
   global: {
     bgColor: '#ffffff',
     textColor: '#303030',
+    lightTextColor: '#a0a0a0',
     mainColor: '#FC4A1A',
     borderColor: '#c0c0c0',
   },

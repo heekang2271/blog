@@ -17,3 +17,7 @@ export function getCookieOption() {
     path: '/',
   };
 }
+
+export function arrayMerge(arrays: any[][]) {
+  return Array.from(new Set(arrays.reduce((acc, cur) => [...acc, ...cur])));
+}

@@ -56,7 +56,6 @@ const ThemeProvider = ({ theme: themeType, children }: ThemeProviderProps) => {
     if (currentTheme.mode === 'light') {
       setCookie(COOKEY_KEY.THEME, 'light', getCookieOption());
       // document.documentElement.setAttribute('data-theme', 'light');
-      document.body.dataset.theme = 'light';
     }
     if (currentTheme.mode === 'dark') {
       setCookie(COOKEY_KEY.THEME, 'dark', getCookieOption());

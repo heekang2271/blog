@@ -4,6 +4,7 @@ const darkTheme: DefaultTheme = {
   global: {
     bgColor: '#303030',
     textColor: '#f7f7f7',
+    lightTextColor: '#707070',
     mainColor: '#ffffff',
     borderColor: '#ffffff',
   },

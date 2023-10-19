@@ -10,7 +10,7 @@ export default createGlobalStyle`
 
   body {
     line-height: 1.5;
-    font-size: 15px;
+    font-size: 16px;
     word-break: keep-all;
     font-family: "Figtree", "Pretendard", sans-serif;
     background-color: ${(props) => props.theme.global.bgColor};

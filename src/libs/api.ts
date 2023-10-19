@@ -3,22 +3,18 @@ import { join } from 'path';
 
 import matter from 'gray-matter';
 
-import { MarkdownFolder } from './types';
+import { Post, PostFolder } from './types';
 
 const mdDirectory = join(process.cwd(), 'md');
 
-export function getMarkdownBySlug(slug: string, folder: MarkdownFolder, fields: string[] = []) {
+export function getPostBySlug(slug: string, folder: PostFolder, fields: string[] = []) {
   const realSlug = slug.replace(/\.md$/, '');
   const fullPath = join(mdDirectory, folder, `${realSlug}.md`);
 
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
 
-  type Items = {
-    [key: string]: string;
-  };
-
-  const items: Items = {};
+  const items = {} as Post;
 
   // Ensure only the minimal needed data is exposed
   fields.forEach((field) => {
@@ -34,19 +30,23 @@ export function getMarkdownBySlug(slug: string, folder: MarkdownFolder, fields: 
     }
   });
 
-  return items;
+  return items as Post;
 }
 
-export function getMarkdownSlugs(folder: MarkdownFolder) {
+export function getPostSlugs(folder: PostFolder) {
   const path = join(mdDirectory, folder);
   return fs.readdirSync(path);
 }
 
-export function getAllMarkdowns(folder: MarkdownFolder, fields: string[] = []) {
-  const slugs = getMarkdownSlugs(folder);
-  const markdowns = slugs
-    .map((slug) => getMarkdownBySlug(slug, folder, fields))
+export function getAllPosts(folder: PostFolder, fields: string[] = []) {
+  const slugs = getPostSlugs(folder);
+  const posts = slugs
+    .map((slug) => getPostBySlug(slug, folder, fields))
     // sort posts by date in descending order
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
-  return markdowns;
+    .sort((post1, post2) => {
+      if (post2.fixed && !post1.fixed) return 1;
+      if (post1.fixed && !post2.fixed) return -1;
+      return post1.date > post2.date ? -1 : 1;
+    });
+  return posts;
 }
