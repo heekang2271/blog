@@ -2,11 +2,11 @@ import { DefaultTheme } from 'styled-components';
 
 const darkTheme: DefaultTheme = {
   global: {
-    bgColor: '#303030',
+    bgColor: '#2C2C31',
     textColor: '#f7f7f7',
-    lightTextColor: '#707070',
-    mainColor: '#ffffff',
-    borderColor: '#ffffff',
+    lightTextColor: '#a0a0a0',
+    mainColor: '#62E6BE',
+    borderColor: '#565656',
   },
   ui: {
     iconBtnBgColor: '#404040',

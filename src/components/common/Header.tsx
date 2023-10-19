@@ -90,9 +90,9 @@ const Header = () => {
             <li>
               <ThemeBtn />
             </li>
-            <li>
+            {/* <li>
               <SearchBtn />
-            </li>
+            </li> */}
           </BtnBox>
         </RightLayout>
       </Wrapper>
